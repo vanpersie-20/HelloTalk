@@ -20,4 +20,3 @@ if(isset($_POST['submit'])){
         $query = "insert into user ( username, password, email, tel) values('$name','$password','$email','$phone')";
     }
 }
-?>
