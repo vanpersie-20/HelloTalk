@@ -4,16 +4,61 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="stsatic/jquery-3.5.1.js">
+    </script>
 <STYLE>
 .person{
 background: linear-gradient(35deg,#CCFFFF,#FFCCCC);
 }
+
+.button{
+    border-radius: 15px;
+    width: 100px;
+    height: 50px;
+}
+.ul1{
+    position: absolute;
+    top: 40%;
+    left: 0px;
+}
+.wenzi{
+font-family: 黑体;
+    font-size: 30px;
+}
+.iframe1{
+    position: absolute;
+    right: 0px;
+}
+#iframe{
+    width: 1000px;
+    height: 500px;
+}
 </STYLE>
 <body class="person">
+<h1>Welcome!</h1>
+<H2>当前用户名:</H2>
+<p class="wenzi">Mike</p>
+<div class="ul1">
 <ul>
-
-
-
+    <li><input type="button" value="我的关注" class="button" id="wodeguangzhu" onclick="guangzhu()"></li>
+    <li><input type="button" value="我的微博" class="button" id="wodeweibo" onclick="weibo()"></li>
+    <li><input type="button" value="我的评论" class="button" id="wodecomment" onclick="comment()"></li>
 </ul>
+</div>
+<div class="iframe1">
+<iframe src="myfollow.html" id="iframe"></iframe>
+</div>
 </body>
+<script type="text/javascript">
+    var obj=document.getElementById("iframe");
+    function guangzhu(){
+      obj.setAttribute("src","myfollow.html");
+    }
+    function weibo(){
+        obj.setAttribute("src","mycontent.html");
+    }
+    function comment(){
+        obj.setAttribute("src","mycomment.html");
+    }
+</script>
 </html>

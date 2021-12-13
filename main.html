@@ -17,12 +17,11 @@
         z-index: 1;
     }
     .content{
-        background: white;
         width:600px;
         height: 100000px;
         position: absolute;
         left: 30%;
-        top: 40%;
+        top: 10%;
     }
     .main{
         min-height: 100%;
@@ -77,14 +76,21 @@
     left: 32%;
     color: red;
 }
+.div3{
+    position: fixed;
+    right:0px;
+    top: 30%;
+}
 </style>
 <body class="back0">
+<div class="div3">
+<form method="post">
+    <textarea class="text"></textarea><br>
+    <input type="submit" value="发表" class="libutton" id="sumbit1">
+</form>
+</div>
 <div class="top">
     <h1 class="wenben">欢迎来到HELLOTALK</h1>
-    <form method="post">
-    <textarea class="text"></textarea><br>
-        <input type="submit" value="发表" class="libutton" id="sumbit1">
-        </form>
 </div>
 <div class="main" id="content">
 </div>
