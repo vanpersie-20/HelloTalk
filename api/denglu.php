@@ -1,6 +1,5 @@
 <?php
-$conn = new mysqli('127.0.0.1','root','336699','weibo');
-
+$conn = new mysqli('localhost','root','peng353001','weibo');
 if(isset($_POST['submit'])){
     $sql1 = "select username from user where username = ?";
     $sql2 = "select password from user where password = ?";
@@ -14,7 +13,6 @@ if(isset($_POST['submit'])){
     $stmt2->execute();
     $result1 = $stmt1->get_result();
     $result2 = $stmt2->get_result();
-
     if($result1->num_rows && $result2->num_rows){
         echo json_encode(array(
             "code" => "100",

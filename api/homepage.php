@@ -1,16 +1,15 @@
 <?php
-$conn = new mysqli('127.0.0.1','root','336699','weibo');
+$conn = new mysqli('localhost', 'root', 'peng353001', 'weibo');
 $sql = "select count(*) from main";
-
-for($i = 0;$i<$sql;$i++){
-    $sql2 = "select writer and content from main where id = $i";
-    $stmt = $conn->prepare($sql2);
-    $stmt->execute();
-
-    echo json_encode(array(
-        "code" => 200,
-        "msg" => "ok",
-        "data" => $sql2,
-    ));
+$sql2 = "select * from main";
+$result = $conn->query($sql2);
+$r = array();
+foreach ($result as $row) {
+    $r[] = $row;
 }
+echo json_encode(array(
+    "code" => 200,
+    "msg" => "ok",
+    "data" => $r,
+));
 ?>

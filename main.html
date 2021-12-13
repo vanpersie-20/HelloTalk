@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="stsatic/jquery-3.5.1.js">
+    </script>
+</head>
+<style type="text/css">
+    body{
+       background: linear-gradient(35deg,#CCFFFF,#FFCCCC);
+        z-index:0;
+        overflow: scroll;
+    }
+
+    div{
+        z-index: 1;
+    }
+    .content{
+        background: white;
+        width:600px;
+        height: 100000px;
+        position: absolute;
+        left: 30%;
+        top: 40%;
+    }
+    .main{
+        min-height: 100%;
+    }
+    .top{
+        position: fixed;
+        left: 40%;
+    }
+.denglubutton{
+    border: none;
+    background: coral;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 90px;
+}
+.denglu{
+    position: fixed;
+    right: 1%;
+    top: 1%;
+}
+.wenben{
+
+}
+.libutton{
+    border: none;
+    background: burlywood;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 90px;
+
+}
+.list{
+    position: fixed;
+    left: 1%;
+    top: 30%;
+
+}
+.text{
+    width: 300px;
+    height:150px ;
+    border-radius: 10px;
+}
+#sumbit1{
+    position: relative;
+    left: 32%;
+    color: red;
+}
+</style>
+<body class="back0">
+<div class="top">
+    <h1 class="wenben">欢迎来到HELLOTALK</h1>
+    <form method="post">
+    <textarea class="text"></textarea><br>
+        <input type="submit" value="发表" class="libutton" id="sumbit1">
+        </form>
+</div>
+<div class="main" id="content">
+</div>
+<div class="content" id="content1">
+</div>
+<div class="denglu">
+<a href="denglu.php" target="_blank"><input type="button" value="登录" class="denglubutton"></a>
+    <a href="zhuce.php" target="_blank"><input type="button" value="注册" class="denglubutton"></a>
+</div>
+<div class="list">
+   <ul>
+       <li><a href="personal.html" target="_blank"><input type="button" value="个人主页" class="libutton"></a></li>
+   </ul>
+</div>
+</body>
+<script type="text/javascript">
+    $.ajax({
+        type:"Get",
+        url:"api/homepage.php",
+        dataType:"json",
+        success:function (data){
+            console.log(data);
+        }
+    })
+
+
+
+
+
+
+
+
+
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                 height=document.getElementById("content1").style.height;
+                document.getElementById("content1").style.height=height+10000;
+            }
+        });
+    });
+</script>
+</html>

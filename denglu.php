@@ -102,7 +102,7 @@
 
     </style>
 </head>
-<body background="image/p3.jpg" style="background-size: 100%">
+<body background="image/p1.jpg" style="background-size: 100%">
 <h2 class="lol"></h2>
 <div id="title1" ">
 HELLO TALK
@@ -122,29 +122,8 @@ HELLO TALK
         <input type="password" id="password_confirm" name='conpass'placeholder="请再次输入密码" class="pass">
     </div>
     <div class="div">
-    <input type="submit" id="submit" value="登录" name="submit" class="denglu">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="zhuce.php" target="_blank"><input type="button"  value="注册" class="zhuce"></a>
+    <input type="submit" id="submit" value="登录" name="submit" class="denglu">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="zhuce.php" target="_blank"><input type="button" value="注册" class="zhuce"></a>
     </div>
 </form>
 </body>
-<?php
-if(!isset($_POST['name'])){
-    die();
-}
-$conn=mysqli_connect('localhost','root','peng353001',"weibo");
-$result=$conn->query("select *from user");
-$username=$_POST['name'];
-$password=$_POST["pass"];
-$flag=true;
-while ($flag) {
-    while ($row = $result->fetch_assoc()) {
-        if ($row["UserName"] == $username && $password == $row["PassWord"]) {
-            $flag = false;
-            echo "登录成功";
-        } else {
-            $flag=false;
-            echo "该用户不存在";
-        }
-    }
-}
-?>
 </html>
