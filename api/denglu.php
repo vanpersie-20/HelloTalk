@@ -23,6 +23,12 @@ if(isset($_POST['submit'])){
             "code" => "101",
             "msg" => "pass worse",
         ));
+    }
+    elseif ($result1 == "admin" && $result2->num_rows){
+        echo json_encode(array(
+            "code" => '1000',
+            "msg" => "admin"
+        ));
     }else{
         echo json_encode(array(
             "code" => "102",

@@ -1,6 +1,6 @@
 <?php
 $conn = new mysqli("localhost",'root','peng353001','weibo');
-if(isset($_POST['submit'])){
+if(isset($_POST['register'])){
     $name = $_POST['Name'];
     $password = $_POST['Pass'];
     $email = $_POST['Email'];
