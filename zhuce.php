@@ -66,7 +66,7 @@
 <body background="image/p2.jpg" style="background-size: 100%">
 <div id="title2">个人注册
 </div>
-<form action="formvalidate.php" method="post" id="form" >
+<form action="api/zhuce.php" method="post" id="form" >
     <div>
         <label for="name">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
         <input type="text" id="name" name="Name" class="raduis">
@@ -95,7 +95,7 @@
         <label for="phone_number">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
         <input type="text" id="phone_number" name="Telnumber" class="raduis" >
         <p id="phone_number_p">请输入手机号码!</p>
-        <input type="submit" id="submit" value="注册" style="size: 30px">
+        <input type="submit" id="submit" value="注册"  name="register" style="size: 30px">
     </div>
 </form>
 <script type="text/javascript">

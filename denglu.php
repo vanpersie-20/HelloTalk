@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>HELLO TALK</title>
+    <script src="stsatic/jquery-3.5.1.js">
+    </script>
     <style type="text/css">
         #title1{
             font-family: "黑体";
@@ -99,15 +101,23 @@
         .div{
          display: block;
         }
+        .button1{
+            position: absolute;
+            top: 760px;
+            left: 0px;
+            color: red;
+            font-family: 黑体;
+        }
 
     </style>
 </head>
+<?php session_start(); ?>
 <body background="image/p1.jpg" style="background-size: 100%">
 <h2 class="lol"></h2>
 <div id="title1" ">
 HELLO TALK
 </div>
-<form method="post" id="form" action="zhuce.php">
+<form method="post" id="form" action="api/denglu.php" target="posthere">
     <h1 class="wel">Welcome!</h1><br>
     <div>
         <label for="name"></label>
@@ -122,8 +132,15 @@ HELLO TALK
         <input type="password" id="password_confirm" name='conpass'placeholder="请再次输入密码" class="pass">
     </div>
     <div class="div">
-    <input type="submit" id="submit" value="登录" name="submit" class="denglu">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="zhuce.php" target="_blank"><input type="button" value="注册" class="zhuce"></a>
+    <input type="submit" id="submit" value="登录" name="submit" class="denglu" onclick="denglu()">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="zhuce.php" target="_blank"><input type="button" value="注册" class="zhuce"></a>
     </div>
 </form>
+<a href="main.php"><input type="button" class="button1" value="返回首页"></a>
 </body>
+<script type="text/javascript">
+function denglu(){
+     alert("登陆成功");
+     window.open("main.php");}
+ }
+</script>
 </html>

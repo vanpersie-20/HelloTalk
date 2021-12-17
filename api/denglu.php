@@ -1,38 +1,38 @@
 <?php
 $conn = new mysqli('localhost','root','peng353001','weibo');
-if(isset($_POST['submit'])){
-    $sql1 = "select username from user where username = ?";
-    $sql2 = "select password from user where password = ?";
+if(isset($_POST['submit'])) {
+    $sql1 = "select username from user where username = ? AND password = ?";
     $stmt1 = $conn->prepare($sql1);
-    $stmt2 = $conn->prepare($sql2);
-    $stmt1->bind_param("s", $username);
-    $stmt2->bind_param("s",$password);
+    $stmt1->bind_param("ss", $username, $password);
     $username = $_POST['name'];
     $password = $_POST['pass'];
     $stmt1->execute();
-    $stmt2->execute();
     $result1 = $stmt1->get_result();
-    $result2 = $stmt2->get_result();
-    if($result1->num_rows && $result2->num_rows){
+    if ($result1->num_rows) {
         echo json_encode(array(
             "code" => "100",
             "msg" => "ok",
         ));
-    }elseif ($result1->num_rows && !$result2->num_rows){
+    } elseif (!$result1->num_rows) {
         echo json_encode(array(
             "code" => "101",
             "msg" => "pass worse",
         ));
-    }
-    elseif ($result1 == "admin" && $result2->num_rows){
-        echo json_encode(array(
-            "code" => '1000',
-            "msg" => "admin"
-        ));
-    }else{
+    } else {
         echo json_encode(array(
             "code" => "102",
-            "msg" =>"no user",
+            "msg" => "no user",
         ));
     }
+    session_start();
+    if ($result1->num_rows) {
+        $sql2="select id from weibo.user where username='$username'";
+        $id=$conn->query($sql2)->fetch_assoc()['id'];
+        $_SESSION["user"] = $username;
+        $_SESSION["id"]=$id;
+        header("main.php");
+        echo "登录成功";
+    }else
+        echo "用户名或密码错误";
 }
+?>
