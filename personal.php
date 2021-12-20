@@ -37,7 +37,9 @@ font-family: 黑体;
 <body class="person">
 <h1>Welcome!</h1>
 <H2>当前用户名:</H2>
-<p class="wenzi">Mike</p>
+<p class="wenzi"><?php session_start();
+    if (isset($_SESSION["user"]))
+    echo $_SESSION["user"] ?></p>
 <div class="ul1">
 <ul>
     <li><input type="button" value="我的关注" class="button" id="wodeguangzhu" onclick="guangzhu()"></li>
