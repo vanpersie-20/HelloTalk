@@ -44,6 +44,7 @@
                   for (var j=0;j<data.userfollowednumber;j++){
                      if (data.userinfo[i].id===data.userfollowed[j].whoFollowed){
                          $("#btn-"+data.userinfo[i].id).attr("disabled",true);
+                         $("#btn-"+data.userinfo[i].id).val("已关注");
                      }
                   }
               }

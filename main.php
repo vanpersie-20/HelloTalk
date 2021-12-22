@@ -114,7 +114,7 @@
         top: 40%;
         left: 10%;
         width: 600px;
-        height: 100px;
+        height: 300px;
         border: 1px solid black;
     }
 
@@ -164,7 +164,7 @@ if (isset($_SESSION["user"])) {
             dataType: "json",
             success: function (data) {
                 for (var i=0;i<data.data4;i++) {
-                        var addhtml5 = '<article class="textdiv"><p id="text-' + i.toString() + '">' + data.data3[i].username + ":" + data.data3[i].content + '</p></article><article class="pinglun2" id="text-' + data.data1[i].id + '"></article><textarea class="pinglun3" id="pingluntext-' + i.toString() + '"></textarea><footer><input type="hidden" class="mainid" value="' + data.data1[i].id + '"><input type="button" value="评论" class="pinglun" onclick="pin(this)"></footer>'
+                        var addhtml5 = '<article class="textdiv"><p id="text-' + i.toString() + '">' + data.data3[i].username + ":" + data.data3[i].content + '</p></article><article class="pinglun2" id="text-' + data.data1[i].id + '"><p>评论区:</p></article><textarea class="pinglun3" id="pingluntext-' + i.toString() + '"></textarea><footer><input type="hidden" class="mainid" value="' + data.data1[i].id + '"><input type="button" value="评论" class="pinglun" onclick="pin(this)"></footer>'
                         $("#content").append(addhtml5);
                         for (var j=0;j<data.commentNumber;j++){
                             if (data.comment[j].mainid===data.data1[i].id){

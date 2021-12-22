@@ -127,10 +127,6 @@ HELLO TALK
         <label for="password"></label>
         <input type="password" id="password" name='pass' placeholder="请输入密码"  class="pass">
     </div>
-    <div>
-        <label for="password_confirm"></label>
-        <input type="password" id="password_confirm" name='conpass'placeholder="请再次输入密码" class="pass">
-    </div>
     <div class="div">
     <input type="submit" id="submit" value="登录" name="submit" class="denglu" onclick="denglu()">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="zhuce.php" target="_blank"><input type="button" value="注册" class="zhuce"></a>
     </div>
