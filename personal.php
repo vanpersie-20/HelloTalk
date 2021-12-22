@@ -36,10 +36,10 @@ font-family: 黑体;
 </STYLE>
 <body class="person">
 <h1>Welcome!</h1>
-<H2>当前用户名:</H2>
-<p class="wenzi"><?php session_start();
-    if (isset($_SESSION["user"]))
-    echo $_SESSION["user"] ?></p>
+<H2>当前用户名:<?php session_start();
+    if (isset($_SESSION["user"])) {
+        echo $_SESSION["user"];
+    }?></H2>
 <div class="ul1">
 <ul>
     <li><input type="button" value="我的关注" class="button" id="wodeguangzhu" onclick="guangzhu()"></li>
@@ -48,19 +48,19 @@ font-family: 黑体;
 </ul>
 </div>
 <div class="iframe1">
-<iframe src="myfollow.html" id="iframe"></iframe>
+<iframe src="myfollow.php" id="iframe"></iframe>
 </div>
 </body>
 <script type="text/javascript">
     var obj=document.getElementById("iframe");
     function guangzhu(){
-      obj.setAttribute("src","myfollow.html");
+      obj.setAttribute("src","myfollow.php");
     }
     function weibo(){
-        obj.setAttribute("src","mycontent.html");
+        obj.setAttribute("src","mycontent.php");
     }
     function comment(){
-        obj.setAttribute("src","mycomment.html");
+        obj.setAttribute("src","mycomment.php");
     }
 </script>
 </html>

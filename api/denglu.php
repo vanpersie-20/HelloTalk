@@ -10,8 +10,6 @@ if(isset($_POST['submit'])) {
     $result1 = $stmt1->get_result();
     if ($result1->num_rows) {
         echo json_encode(array(
-            "code" => "100",
-            "msg" => "ok",
         ));
     } elseif (!$result1->num_rows) {
         echo json_encode(array(

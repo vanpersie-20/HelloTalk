@@ -103,7 +103,7 @@
         }
         .button1{
             position: absolute;
-            top: 760px;
+            top: 0px;
             left: 0px;
             color: red;
             font-family: 黑体;

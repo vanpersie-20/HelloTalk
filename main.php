@@ -208,17 +208,26 @@ if (isset($_SESSION["user"])) {
         })
     }
     function pin(e) {
-        console.log($(e).prev().val())
-        $.ajax({
-            type: "GET",
-            url: "api/addcomment.php?whoComment=<?php
-                if (isset($_SESSION["id"])) {
-                    echo $_SESSION["id"];
-                }?>&content=" + $(e).parents().prev().val()+"&mainid="+$(e).prev().val(),
-            success(data) {
-                window.location.reload();
-            }
-        })
+        var flag=<?php if(isset($_SESSION["user"])) {
+        echo "1";}
+    else{echo "0";
+    }?>;
+        if(Boolean(parseInt(flag)))
+           {
+               $.ajax({
+                   type: "GET",
+                   url: "api/addcomment.php?whoComment=<?php
+                       if (isset($_SESSION["id"])) {
+                           echo $_SESSION["id"];
+                       }?>&content=" + $(e).parents().prev().val() + "&mainid=" + $(e).prev().val(),
+                   success(data) {
+                       window.location.reload();
+                   }
+               })
+           }
+        else {
+            alert("请先登录后再发表评论！")
+        }
     }
         $(document).ready(function () {
             $(window).scroll(function () {
