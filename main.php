@@ -26,11 +26,6 @@
         left: 30%;
         top: 10%;
     }
-
-    .main {
-        min-height: 100%;
-    }
-
     .top {
         position: relative;
         left: 40%;
@@ -142,10 +137,8 @@ if (isset($_SESSION["user"])) {
 <div class="list">
    <ul>
        <li><a href="personal.php" target="_blank"><input type="button" value="个人主页" class="libutton" name="personal"></a></li>
+       <li><input type="button" value="退出登录" name="tuichu" id="tuichu1" class="libutton" onclick="tuichu()"></li>
    </ul>
-</div>
-<div class="tuichu">
-<input type="button" value="退出登录" name="tuichu" id="tuichu1" onclick="tuichu()">
 </div>
 ';
 } else {

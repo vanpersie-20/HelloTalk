@@ -11,13 +11,11 @@ if(isset($_POST['register'])){
     $stmt->execute();
     $result = $stmt->get_result();
     if($result->num_rows){
-         echo json_encode(array(
-            "code" => "103",
-            "msg" => "name repeat",
-        ));
+        echo "用户名相同！";
     }else{
         $query = "insert into weibo.user ( username, password, email, tel) values('$name','$password','$email','$phone')";
         $conn->query($query);
         echo "注册成功！";
     }
 }
+?>
