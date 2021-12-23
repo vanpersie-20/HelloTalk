@@ -35,11 +35,19 @@ font-family: 黑体;
 }
 </STYLE>
 <body class="person">
+<a href="main.php"><input type="button" class="button1" value="返回首页"></a>
 <h1>Welcome!</h1>
 <H2>当前用户名:<?php session_start();
     if (isset($_SESSION["user"])) {
         echo $_SESSION["user"];
     }?></H2>
+<?php
+if (isset($_SESSION["user"])){
+if ($_SESSION["user"]=="admin"){
+    echo '<a href="admin.php"><input type="button" class="button1" value="管理员界面"></a>';
+}
+}
+?>
 <div class="ul1">
 <ul>
     <li><input type="button" value="我的关注" class="button" id="wodeguangzhu" onclick="guangzhu()"></li>
