@@ -34,3 +34,9 @@ if(isset($_POST['submit'])) {
         echo "用户名或密码错误";
 }
 ?>
+<script type="text/javascript">
+    function  open(){
+        window.location.href="../main.php";
+    }
+    setTimeout(open,3000);
+</script>

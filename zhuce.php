@@ -64,6 +64,7 @@
     </style>
 </head>
 <body background="image/p2.jpg" style="background-size: 100%">
+<a href="main.php"><input type="button" class="button1" value="返回首页"></a>
 <div id="title2">个人注册
 </div>
 <form action="api/zhuce.php" method="post" id="form" >
@@ -213,7 +214,6 @@
     }
     var validateAll = function (e){
         if(validateName()&&validatePassword()&&validateEmail()&&validatePhone()){
-            alert("注册成功！")
         }else{
             alert("注册失败，请正确填写。");
             e.preventDefault();
