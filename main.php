@@ -8,7 +8,7 @@
 </head>
 <style type="text/css">
     body {
-        background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+        background-image: linear-gradient(to top,#fff1eb 0%,#ace0f9 100%);
         z-index: 0;
         overflow: scroll;
     }
@@ -65,9 +65,9 @@
         width: 90px;
 
     }
-
     .textdiv {
-        border: 1px solid black;
+        border:1px solid #9BDF70;
+        background-color:#F0FBEB;
         display: flex;
         width: 600px;
         height: 200px;
@@ -110,11 +110,19 @@
         left: 10%;
         width: 600px;
         height: 300px;
-        border: 1px solid black;
+        border: 1px solid #9BDF70;
+        background-color: #eff7ff;
     }
 
     .pinglun3 {
         display: flex;
+    }
+    .leftcontent{
+        position: relative;
+        left: 0px;
+        background-color:white;
+        height: 10000px;
+        width: 200px;
     }
 </style>
 <body class="back0" onload="windowopen()">
@@ -123,6 +131,7 @@
 </div>
 <div class="content" id="content">
 </div>
+<div class="leftcontent"></div>
 <?php
 session_start();
 if (isset($_SESSION["user"])) {

@@ -11,6 +11,11 @@ if(isset($_POST['register'])){
     foreach ($result as $row){
         $user[]=$row['username'];
     }
+    if ($user==null){
+        $query = "insert into weibo.user ( username, password, email, tel) values('$name','$password','$email','$phone')";
+        $conn->query($query);
+        echo "注册成功！";
+    }
     for ($i=0;$i<sizeof($user);$i=$i+1){
     if($user[$i]==$name){
          echo "用户名已存在,请重新注册";
